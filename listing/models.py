@@ -18,6 +18,8 @@ class Listing(models.Model):
     
     def get_absolute_url(self):
         return reverse("listing_details", args=[str(self.slug)])
+class Category(models.Model):
+    title=
     
     
 
