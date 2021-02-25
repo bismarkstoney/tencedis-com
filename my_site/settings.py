@@ -1,5 +1,5 @@
 
-
+import os
 from pathlib import Path
 
 
@@ -27,8 +27,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+
     'accounts',
     'listing',
+    'pages.apps.PagesConfig',
 ]
 AUTH_USER_MODEL='accounts.CustomerUser'
 
@@ -47,7 +50,7 @@ ROOT_URLCONF = 'my_site.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [str(BASE_DIR.joinpath('templates')),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -111,3 +114,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS= (str(BASE_DIR.joinpath('static')),)
+STATIC_ROOT= str(BASE_DIR.joinpath('staticfiles'))
+STATICFILES_STORAGE='django.contrib.staticfiles.storage.StaticFilesStorage'
+
+
+MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
+MEDIA_URL='/media/'
+
