@@ -5,4 +5,5 @@ from .models import Listing
 class ListingsListView(ListView):
     model=Listing
     template_name='listing/listings.html'
+
     

@@ -28,10 +28,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-
-    'accounts',
-    'listing',
+    #Local
+    'accounts.apps.AccountsConfig',
+    'listing.apps.ListingConfig',
     'pages.apps.PagesConfig',
+    'contacts.apps.ContactsConfig',
 ]
 AUTH_USER_MODEL='accounts.CustomerUser'
 
@@ -122,3 +123,10 @@ STATICFILES_STORAGE='django.contrib.staticfiles.storage.StaticFilesStorage'
 MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
 MEDIA_URL='/media/'
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#Emial
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'obengstoney@gmail.com'
+EMAIL_HOST_PASSWORD = 'Winsrv2008@'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

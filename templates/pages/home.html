@@ -27,7 +27,7 @@
                 <a href="listings-single.html" class="img d-block" style="background-image:url('{{listing.cover_image.url}}')"></a>
                 
                 <div class="lh-content">
-                  <span class="category">{{listing.catagories}}</span>
+                  <span class="category">{{listing.categories}}</span>
                   <a href="#" class="bookmark"><span class="icon-heart"></span></a>
                   <h3><a href="listings-single.html">{{listing.title}}</a></h3>
                   <address>Don St, Brooklyn, New York</address>
@@ -73,52 +73,30 @@
         </div>
         <div class="overlap-category mb-5">
           <div class="row align-items-stretch no-gutters">
+           {% if listings %}
+           
+            {% for category in listings %}
+            
             <div class="col-sm-6 col-md-4 mb-4 mb-lg-0 col-lg-2">
-              <a href="#" class="popular-category h-100">
+              <a href=" {% url 'category' category.categories  %}" class="popular-category h-100">
                 <span class="icon"><span class="flaticon-car"></span></span>
-                <span class="caption mb-2 d-block">Cars &amp; Vehicles</span>
+                <span class="caption mb-2 d-block">{{category.categories.title}}</span>
                 <span class="number">1,921</span>
               </a>
             </div>
 
-            <div class="col-sm-6 col-md-4 mb-4 mb-lg-0 col-lg-2">
-              <a href="#" class="popular-category h-100">
-                <span class="icon"><span class="flaticon-closet"></span></span>
-                <span class="caption mb-2 d-block">Furniture</span>
-                <span class="number">2,339</span>
-              </a>
-            </div>
+            
+            {% endfor %}
+           {% endif %}
+            
+           
 
-            <div class="col-sm-6 col-md-4 mb-4 mb-lg-0 col-lg-2">
-              <a href="#" class="popular-category h-100">
-                <span class="icon"><span class="flaticon-home"></span></span>
-                <span class="caption mb-2 d-block">Real Estate</span>
-                <span class="number">4,398</span>
-              </a>
-            </div>
-            <div class="col-sm-6 col-md-4 mb-4 mb-lg-0 col-lg-2">
-              <a href="#" class="popular-category h-100">
-                <span class="icon"><span class="flaticon-open-book"></span></span>
-                <span class="caption mb-2 d-block">Books &amp; Magazines</span>
-                <span class="number">3,298</span>
-              </a>
-            </div>
             
-            <div class="col-sm-6 col-md-4 mb-4 mb-lg-0 col-lg-2">
-              <a href="#" class="popular-category h-100">
-                <span class="icon"><span class="flaticon-tv"></span></span>
-                <span class="caption mb-2 d-block">Electronics</span>
-                <span class="number">`2,932</span>
-              </a>
-            </div>
             
-            <div class="col-sm-6 col-md-4 mb-4 mb-lg-0 col-lg-2">
-              <a href="#" class="popular-category h-100">
-                <span class="icon"><span class="flaticon-pizza"></span></span>
-                <span class="caption mb-2 d-block">Other</span>
-                <span class="number">183</span>
-              </a>
-            </div>
+            
+            
+            
+            
           </div>
         </div>
         
@@ -159,7 +137,7 @@
                 <div class="lh-content">
                   <span class="category">Furniture</span>
                   <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                  <h3><a href="listings-single.html">Wooden Chair &amp; Table</a></h3>
+                  <h3><a href="">Wooden Chair &amp; Table</a></h3>
                   <address>Don St, Brooklyn, New York</address>
                   <p class="mb-0">
                     <span class="icon-star text-warning"></span>
